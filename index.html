@@ -1,30 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>etan (Fixed)</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Search</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="navbar">
-    <button id="back">←</button>
-    <button id="forward">→</button>
-    <button id="refresh">⟳</button>
-    <div class="address">
-      <span id="lock">🔒</span>
-      <input id="urlbar" placeholder="Enter URL..." value="https://duckduckgo.com">
-      <button id="go">Go</button>
+  <!-- Tab Bar (OLD DESIGN) -->
+  <div id="tab-bar">
+    <div class="tab active" data-tab="tab1">
+      <span class="tab-title">New Tab</span>
+      <button class="tab-close" data-close="tab1">×</button>
     </div>
   </div>
 
-  <div id="tabs"></div>
-  <button id="newtab">+</button>
+  <!-- New Tab Button (OLD) -->
+  <button id="new-tab" title="New Tab (Ctrl+T)">+</button>
 
-  <div id="viewport">
-    <iframe id="frame" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+  <!-- OLD Tab Contents + Address Bar -->
+  <div id="tab-contents">
+    <div id="tab1" class="tab-content active">
+      <!-- Address Bar ADDED -->
+      <div class="address-bar">
+        <input type="text" id="url-input-tab1" placeholder="Enter URL or search..." value="https://duckduckgo.com">
+        <button class="go-btn">Go</button>
+      </div>
+      <div id="content-tab1"></div>
+    </div>
   </div>
 
-  <script src="ui.js"></script>
-  <script src="proxy.js"></script>
-  <script>window.ui = new ScramjetUI();</script>
+  <script src="tabs.js"></script>
+  <script src="search.js"></script>
 </body>
 </html>
