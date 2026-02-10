@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>etan (Fixed)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="navbar">
+    <button id="back">←</button>
+    <button id="forward">→</button>
+    <button id="refresh">⟳</button>
+    <div class="address">
+      <span id="lock">🔒</span>
+      <input id="urlbar" placeholder="Enter URL..." value="https://duckduckgo.com">
+      <button id="go">Go</button>
+    </div>
+  </div>
+
+  <div id="tabs"></div>
+  <button id="newtab">+</button>
+
+  <div id="viewport">
+    <iframe id="frame" sandbox="allow-scripts allow-same-origin allow-forms allow-popups"></iframe>
+  </div>
+
+  <script src="ui.js"></script>
+  <script src="proxy.js"></script>
+  <script>window.ui = new ScramjetUI();</script>
+</body>
+</html>
